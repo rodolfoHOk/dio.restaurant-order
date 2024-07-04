@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>me.dio.hiokdev</groupId>
 	<artifactId>restaurant-orders.customer-api</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.0</version>
 	<name>restaurant-orders.customer-api</name>
 	<description>Gerenciador de Pedidos de Restaurantes - Customer API</description>
 	<url/>

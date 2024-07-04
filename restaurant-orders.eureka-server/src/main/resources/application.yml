@@ -1,9 +1,9 @@
+server:
+  port: 9090
+
 spring:
   application:
     name: restaurant-orders.eureka-server
-
-server:
-  port: 9090
 
 eureka:
   instance:
