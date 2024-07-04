@@ -38,3 +38,8 @@ Eureka clients:
 - [Eureka Server](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.eureka-server&name=restaurant-orders.eureka-server&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Eureka%20Server&packageName=me.dio.hiokdev.restaurant-orders.eureka-server&dependencies=cloud-eureka-server)
 
 - [Customer API](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.customer-api&name=restaurant-orders.customer-api&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Customer%20API&packageName=me.dio.hiokdev.restaurant-orders.customer-api&dependencies=cloud-eureka,actuator,codecentric-spring-boot-admin-server,web,data-jpa,h2,validation,lombok)
+
+## Access
+
+- Eureka server [http://localhost:9090/](http://localhost:9090/)
+- Customers admin [http://localhost:8081/applications](http://localhost:8081/applications)
