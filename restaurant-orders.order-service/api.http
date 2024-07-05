@@ -48,11 +48,28 @@ Content-Type: application/json
   "value": -100
 }
 
+### Bad request test 2 (400)
+POST http://localhost:8082/api/v1/order
+Content-Type: application/json
+
+{
+  "customerId": "",
+  "description": "Te",
+  "value": -100,
+}
+
+### Bad request test 3 (400)
+GET http://localhost:8082/api/v1/order/b0f63549-6a52-
+
 ### Not found test (404)
 GET http://localhost:8082/api/v1/order/b0f63549-6a52-4f61-8af2-9a680cc39e8a
 
-### Method not allowed test (405)
-POST http://localhost:8082/api/v1/order/{{orderId}}
+### Not found test 2 (404)
+GET http://localhost:8082/api/v1/orders/{{orderId}}
 
 ### Method not allowed test (405)
-POST http://localhost:8082/api/v1/orders/{{orderId}}
+PATCH http://localhost:8082/api/v1/order/{{orderId}}
+
+### Unsupported media type test (415)
+POST http://localhost:8082/api/v1/order
+Content-Type: application/soap+xml

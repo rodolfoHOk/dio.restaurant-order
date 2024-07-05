@@ -42,8 +42,27 @@ Content-Type: application/json
   "address": ""
 }
 
+### Bad request test 2 (400)
+POST http://localhost:8081/api/v1/customer
+Content-Type: application/json
+
+{
+  "name": "",
+  "address": "",
+}
+
+### Bad request test 3 (400)
+GET http://localhost:8081/api/v1/customer/b0f63549-6a52-
+
 ### Not found test (404)
 GET http://localhost:8081/api/v1/customer/b0f63549-6a52-4f61-8af2-9a680cc39e8a
 
+### Not found test 2 (404)
+GET http://localhost:8081/api/v1/customers/{{customerId}}
+
 ### Method not allowed test (405)
-POST http://localhost:8081/api/v1/customer/{{customerId}}
+PATCH http://localhost:8081/api/v1/customer/{{customerId}}
+
+### Unsupported media type test (415)
+POST http://localhost:8081/api/v1/customer
+Content-Type: application/soap+xml

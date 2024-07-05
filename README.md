@@ -20,7 +20,7 @@ Eureka clients:
 
 - spring-cloud-starter-netflix-eureka-client
 - spring-boot-starter-actuator
-- spring-boot-admin-starter-server
+- spring-boot-admin-starter-server or spring-boot-admin-starter-client
 - spring-boot-starter-web
 - spring-boot-starter-data-jpa
 - spring-boot-starter-validation
