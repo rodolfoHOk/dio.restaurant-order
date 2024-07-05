@@ -1,0 +1,38 @@
+### Customers actuator
+GET http://localhost:8081/actuator
+
+### Orders actuator
+GET http://localhost:8082/actuator
+
+### Delivery actuator
+GET http://localhost:8083/actuator
+
+
+### Customers health
+GET http://localhost:8081/actuator/health
+
+### Orders health
+GET http://localhost:8082/actuator/health
+
+### Delivery health
+GET http://localhost:8083/actuator/health
+
+
+### Customers Service Registry
+GET http://localhost:8081/actuator/serviceregistry
+
+### Customers Service Registry
+GET http://localhost:8082/actuator/serviceregistry
+
+### Customers Service Registry
+GET http://localhost:8083/actuator/serviceregistry
+
+
+### Customers Features
+GET http://localhost:8081/actuator/features
+
+### Orders Features
+GET http://localhost:8082/actuator/features
+
+### Delivery Features
+GET http://localhost:8083/actuator/features

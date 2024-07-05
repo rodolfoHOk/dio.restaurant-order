@@ -56,22 +56,22 @@ Eureka clients:
 
 ### Comandos
 
+- na raiz do repositório
 - cd restaurant-orders.eureka-server
 - ./mvnw package -DskipTests
 - java -jar target/restaurant-orders.eureka-server-0.1.0.jar
-- cd ..
 
+- na raiz do repositório
 - cd restaurant-orders.customer-service
 - ./mvnw package -DskipTests
 - java -jar target/restaurant-orders.customer-service-0.1.0.jar
-- cd ..
 
+- na raiz do repositório
 - cd restaurant-orders.order-service
 - ./mvnw package -DskipTests
 - java -jar target/restaurant-orders.order-service-0.1.0.jar
-- cd ..
 
+- na raiz do repositório
 - cd restaurant-orders.delivery-service
 - ./mvnw package -DskipTests
 - java -jar target/restaurant-orders.delivery-service-0.1.0.jar
-- cd ..
