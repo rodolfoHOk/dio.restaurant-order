@@ -1,0 +1,49 @@
+### Get all customers
+GET http://localhost:8081/api/v1/customers
+
+### Create customer
+POST http://localhost:8081/api/v1/customer
+Content-Type: application/json
+
+{
+  "name": "Test Name",
+  "address": "Test Address"
+}
+
+### customer ID
+@customerId = 9845c137-02fb-4682-8ab1-96f3cf02574d
+
+### Get customer by ID
+GET http://localhost:8081/api/v1/customer/{{customerId}}
+
+### Update customer by ID
+PUT http://localhost:8081/api/v1/customer/{{customerId}}
+Content-Type: application/json
+
+{
+  "name": "Test Update Name",
+  "address": "Test Update Address"
+}
+
+### Delete customer by ID
+DELETE http://localhost:8081/api/v1/customer/{{customerId}}
+
+
+
+
+# Errors tests
+
+### Bad request test (400)
+POST http://localhost:8081/api/v1/customer
+Content-Type: application/json
+
+{
+  "name": "",
+  "address": ""
+}
+
+### Not found test (404)
+GET http://localhost:8081/api/v1/customer/b0f63549-6a52-4f61-8af2-9a680cc39e8a
+
+### Method not allowed test (405)
+POST http://localhost:8081/api/v1/customer/{{customerId}}
