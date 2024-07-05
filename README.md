@@ -47,3 +47,31 @@ Eureka clients:
 
 - Eureka server [http://localhost:9090/](http://localhost:9090/)
 - Customers admin [http://localhost:8081/applications](http://localhost:8081/applications)
+
+## Rodar
+
+### Requisitos
+
+- Java 21
+
+### Comandos
+
+- cd restaurant-orders.eureka-server
+- ./mvnw package -DskipTests
+- java -jar target/restaurant-orders.eureka-server-0.1.0.jar
+- cd ..
+
+- cd restaurant-orders.customer-service
+- ./mvnw package -DskipTests
+- java -jar target/restaurant-orders.customer-service-0.1.0.jar
+- cd ..
+
+- cd restaurant-orders.order-service
+- ./mvnw package -DskipTests
+- java -jar target/restaurant-orders.order-service-0.1.0.jar
+- cd ..
+
+- cd restaurant-orders.delivery-service
+- ./mvnw package -DskipTests
+- java -jar target/restaurant-orders.delivery-service-0.1.0.jar
+- cd ..

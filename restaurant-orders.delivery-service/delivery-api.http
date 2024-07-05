@@ -1,0 +1,82 @@
+### Get all deliveries
+GET http://localhost:8083/api/v1/deliveries
+
+### order ID
+@orderId = c8042bc1-1273-4ad5-a226-4dca9bbf11f9
+
+### customer ID
+@customerId = 9845c137-02fb-4682-8ab1-96f3cf02574d
+
+### Create delivery
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/json
+
+{
+  "orderId": "{{orderId}}",
+  "customerId": "{{customerId}}",
+  "address": "Test address",
+  "shippingValue": 500
+}
+
+### delivery ID
+@deliveryId = 20050dec-55ce-4b32-8cae-77ff8fbbc742
+
+### Get delivery by ID
+GET http://localhost:8083/api/v1/delivery/{{deliveryId}}
+
+### Update delivery by ID
+PUT http://localhost:8083/api/v1/delivery/{{deliveryId}}
+Content-Type: application/json
+
+{
+  "orderId": "{{orderId}}",
+  "customerId": "{{customerId}}",
+  "address": "Test update address",
+  "shippingValue": 650
+}
+
+### Delete delivery by ID
+DELETE http://localhost:8083/api/v1/delivery/{{deliveryId}}
+
+
+
+
+# Errors tests
+
+### Bad request test (400)
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/json
+
+{
+  "orderId": "",
+  "customerId": "af45",
+  "address": "Te",
+  "shippingValue": -1
+}
+
+### Bad request test 2 (400)
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/json
+
+{
+  "orderId": "",
+  "customerId": "af45",
+  "address": "Te",
+  "shippingValue": -100,
+}
+
+### Bad request test 3 (400)
+GET http://localhost:8083/api/v1/delivery/b0f63549-6a52-
+
+### Not found test (404)
+GET http://localhost:8083/api/v1/delivery/b0f63549-6a52-4f61-8af2-9a680cc39e8a
+
+### Not found test 2 (404)
+GET http://localhost:8083/api/v1/deliveries/{{deliveryId}}
+
+### Method not allowed test (405)
+PATCH http://localhost:8083/api/v1/delivery/{{deliveryId}}
+
+### Unsupported media type test (415)
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/soap+xml
