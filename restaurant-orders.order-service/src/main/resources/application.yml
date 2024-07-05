@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: restaurant-orders.order-service
+    name: order-service
   datasource:
     url: jdbc:h2:mem:order
     username: sa
@@ -19,7 +19,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: '*'
   endpoint:
     health:
       show-details: ALWAYS
