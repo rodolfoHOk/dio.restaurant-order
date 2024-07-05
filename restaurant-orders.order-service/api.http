@@ -1,0 +1,58 @@
+### Get all orders
+GET http://localhost:8082/api/v1/orders
+
+### customer ID
+@customerId = 9845c137-02fb-4682-8ab1-96f3cf02574d
+
+### Create order
+POST http://localhost:8082/api/v1/order
+Content-Type: application/json
+
+{
+  "customerId": "{{customerId}}",
+  "description": "Test Description",
+  "value": 1000
+}
+
+### order ID
+@orderId = c8042bc1-1273-4ad5-a226-4dca9bbf11f9
+
+### Get order by ID
+GET http://localhost:8082/api/v1/order/{{orderId}}
+
+### Update order by ID
+PUT http://localhost:8082/api/v1/order/{{orderId}}
+Content-Type: application/json
+
+{
+  "customerId": "{{customerId}}",
+  "description": "Test Update Description",
+  "value": 1099
+}
+
+### Delete order by ID
+DELETE http://localhost:8082/api/v1/order/{{orderId}}
+
+
+
+
+# Errors tests
+
+### Bad request test (400)
+POST http://localhost:8082/api/v1/order
+Content-Type: application/json
+
+{
+  "customerId": "",
+  "description": "Te",
+  "value": -100
+}
+
+### Not found test (404)
+GET http://localhost:8082/api/v1/order/b0f63549-6a52-4f61-8af2-9a680cc39e8a
+
+### Method not allowed test (405)
+POST http://localhost:8082/api/v1/order/{{orderId}}
+
+### Method not allowed test (405)
+POST http://localhost:8082/api/v1/orders/{{orderId}}

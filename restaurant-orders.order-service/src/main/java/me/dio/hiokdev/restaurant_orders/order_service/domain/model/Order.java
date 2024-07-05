@@ -33,7 +33,7 @@ public class Order {
     @Column(nullable = false)
     private String description;
 
-    @Column(nullable = false)
+    @Column(name = "`value`", nullable = false)
     private long value;
 
     @CreationTimestamp
