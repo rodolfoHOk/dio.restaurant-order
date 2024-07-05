@@ -27,6 +27,14 @@ Eureka clients:
 - h2database
 - lombok
 
+## Diferenças com o projeto de referência da(s) live(s)
+
+- Uso de DDD (Domain driven design) nos serviços
+- Adicionado camada de service ao invés de usar o repositories diretamente nos controllers dos serviços
+- Adicionado mais handlers no global exception handler dos serviços
+- Adicionado requests e responses DTOs ao invés de usar diretamente as entities nos controllers dos serviços
+- Uso do Jakarta validations nos requests DTOs dos serviços
+
 ## Documentations links
 
 - [Spring Cloud Netflix](https://docs.spring.io/spring-cloud-netflix/reference/index.html)
