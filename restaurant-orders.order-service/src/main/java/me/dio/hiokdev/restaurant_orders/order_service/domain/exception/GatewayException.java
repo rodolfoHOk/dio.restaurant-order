@@ -1,8 +1,8 @@
 package me.dio.hiokdev.restaurant_orders.order_service.domain.exception;
 
-public class OrderException extends RuntimeException {
+public class GatewayException extends OrderException {
 
-    public OrderException(String message) {
+    public GatewayException(String message) {
         super(message);
     }
 
