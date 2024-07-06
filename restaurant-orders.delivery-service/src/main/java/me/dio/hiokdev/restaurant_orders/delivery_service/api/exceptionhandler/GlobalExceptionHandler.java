@@ -2,7 +2,9 @@ package me.dio.hiokdev.restaurant_orders.delivery_service.api.exceptionhandler;
 
 import lombok.RequiredArgsConstructor;
 import me.dio.hiokdev.restaurant_orders.delivery_service.api.dto.ErrorDetails;
+import me.dio.hiokdev.restaurant_orders.delivery_service.domain.exception.BadRequestException;
 import me.dio.hiokdev.restaurant_orders.delivery_service.domain.exception.DeliveryException;
+import me.dio.hiokdev.restaurant_orders.delivery_service.domain.exception.GatewayException;
 import me.dio.hiokdev.restaurant_orders.delivery_service.domain.exception.ResourceNotFoundException;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
@@ -30,6 +32,18 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<ErrorDetails> resourceNotFoundExceptionHandler(ResourceNotFoundException ex, WebRequest request) {
         HttpStatus status = HttpStatus.NOT_FOUND;
+        var errorDetails = ErrorDetails.builder()
+                .status(status.value())
+                .message(ex.getMessage())
+                .details(request.getDescription(false))
+                .timestamp(OffsetDateTime.now())
+                .build();
+        return new ResponseEntity<>(errorDetails, status);
+    }
+
+    @ExceptionHandler(BadRequestException.class)
+    public ResponseEntity<ErrorDetails> resourceNotFoundExceptionHandler(BadRequestException ex, WebRequest request) {
+        HttpStatus status = HttpStatus.BAD_REQUEST;
         var errorDetails = ErrorDetails.builder()
                 .status(status.value())
                 .message(ex.getMessage())
@@ -110,6 +124,18 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
     public ResponseEntity<ErrorDetails> httpMediaTypeNotSupportedExceptionHandler(HttpMediaTypeNotSupportedException ex, WebRequest request) {
         HttpStatus status = HttpStatus.UNSUPPORTED_MEDIA_TYPE;
+        var errorDetails = ErrorDetails.builder()
+                .status(status.value())
+                .message(ex.getMessage())
+                .details(request.getDescription(false))
+                .timestamp(OffsetDateTime.now())
+                .build();
+        return new ResponseEntity<>(errorDetails, status);
+    }
+
+    @ExceptionHandler(GatewayException.class)
+    public ResponseEntity<ErrorDetails> resourceNotFoundExceptionHandler(GatewayException ex, WebRequest request) {
+        HttpStatus status = HttpStatus.BAD_GATEWAY;
         var errorDetails = ErrorDetails.builder()
                 .status(status.value())
                 .message(ex.getMessage())
