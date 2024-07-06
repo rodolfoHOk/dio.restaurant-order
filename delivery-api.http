@@ -2,10 +2,10 @@
 GET http://localhost:8083/api/v1/deliveries
 
 ### order ID
-@orderId = c8042bc1-1273-4ad5-a226-4dca9bbf11f9
+@orderId = 7712eb75-79fb-4914-903f-ecd967c852e6
 
 ### customer ID
-@customerId = 9845c137-02fb-4682-8ab1-96f3cf02574d
+@customerId = 59abbedd-90c1-472f-bde3-2a8b11cae9f3
 
 ### Create delivery
 POST http://localhost:8083/api/v1/delivery
@@ -19,7 +19,7 @@ Content-Type: application/json
 }
 
 ### delivery ID
-@deliveryId = 20050dec-55ce-4b32-8cae-77ff8fbbc742
+@deliveryId = 3b61e798-0b4f-47b9-a313-1a590d9c65fd
 
 ### Get delivery by ID
 GET http://localhost:8083/api/v1/delivery/{{deliveryId}}
@@ -67,6 +67,50 @@ Content-Type: application/json
 
 ### Bad request test 3 (400)
 GET http://localhost:8083/api/v1/delivery/b0f63549-6a52-
+
+### Bad request test 4 (400)
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/json
+
+{
+  "orderId": "c8042bc1-1273-4ad5-a226-4dca9bbf11f9",
+  "customerId": "{{customerId}}",
+  "address": "Test address",
+  "shippingValue": 500
+}
+
+### Bad request test 5 (400)
+PUT http://localhost:8083/api/v1/delivery/{{deliveryId}}
+Content-Type: application/json
+
+{
+  "orderId": "c8042bc1-1273-4ad5-a226-4dca9bbf11f9",
+  "customerId": "{{customerId}}",
+  "address": "Test address",
+  "shippingValue": 500
+}
+
+### Bad request test 6 (400)
+POST http://localhost:8083/api/v1/delivery
+Content-Type: application/json
+
+{
+  "orderId": "{{orderId}}",
+  "customerId": "9845c137-02fb-4682-8ab1-96f3cf02574d",
+  "address": "Test address",
+  "shippingValue": 500
+}
+
+### Bad request test 7 (400)
+PUT http://localhost:8083/api/v1/delivery/{{deliveryId}}
+Content-Type: application/json
+
+{
+  "orderId": "{{orderId}}",
+  "customerId": "9845c137-02fb-4682-8ab1-96f3cf02574d",
+  "address": "Test update address",
+  "shippingValue": 650
+}
 
 ### Not found test (404)
 GET http://localhost:8083/api/v1/delivery/b0f63549-6a52-4f61-8af2-9a680cc39e8a

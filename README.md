@@ -51,11 +51,8 @@ Order and Delivery services (Eureka clients):
 ## Spring Initializr
 
 - [Eureka Server](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.eureka-server&name=restaurant-orders.eureka-server&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Eureka%20Server&packageName=me.dio.hiokdev.restaurant-orders.eureka-server&dependencies=cloud-eureka-server)
-
 - [Customer service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.customer-api&name=restaurant-orders.customer-api&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Customer%20Service&packageName=me.dio.hiokdev.restaurant-orders.customer-api&dependencies=cloud-eureka,actuator,codecentric-spring-boot-admin-server,web,data-jpa,h2,validation,lombok)
-
 - [Order service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.order-service&name=restaurant-orders.order-service&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Order%20Service&packageName=me.dio.hiokdev.restaurant-orders.order-service&dependencies=cloud-eureka,actuator,web,data-jpa,h2,validation,lombok,codecentric-spring-boot-admin-server,cloud-feign)
-
 - [Delivery service](https://start.spring.io/#!type=maven-project&language=java&platformVersion=3.3.1&packaging=jar&jvmVersion=21&groupId=me.dio.hiokdev&artifactId=restaurant-orders.delivery-service&name=restaurant-orders.delivery-service&description=Gerenciador%20de%20Pedidos%20de%20Restaurantes%20-%20Delivery%20Service&packageName=me.dio.hiokdev.restaurant-orders.delivery-service&dependencies=cloud-eureka,actuator,web,data-jpa,h2,validation,lombok,codecentric-spring-boot-admin-server,cloud-feign)
 
 ## Access
